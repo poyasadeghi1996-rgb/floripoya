@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poya & Florence – Hochzeit</title>
+  <meta name="description" content="Alle wichtigen Informationen zur Hochzeit von Poya und Florence am 29. Juli 2026 in Split." />
+  <style>
+    :root {
+      --bg: #fbf8f4;
+      --bg-soft: #f4eee7;
+      --panel: rgba(255,255,255,0.74);
+      --panel-strong: rgba(255,255,255,0.88);
+      --text: #3d342d;
+      --muted: #7c6f66;
+      --line: rgba(61,52,45,0.10);
+      --accent: #b68a62;
+      --accent-deep: #8f6746;
+      --shadow: 0 18px 60px rgba(71, 53, 38, 0.10);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(182,138,98,0.14), transparent 30%),
+        radial-gradient(circle at 90% 15%, rgba(182,138,98,0.08), transparent 22%),
+        linear-gradient(180deg, #fffdfb 0%, var(--bg) 45%, #f8f2eb 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+    a { color: inherit; text-decoration: none; }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(251,248,244,0.72);
+      border-bottom: 1px solid rgba(61,52,45,0.06);
+    }
+
+    .topbar-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .wordmark {
+      font-size: 0.88rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: color .2s ease;
+    }
+
+    .nav a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: linear-gradient(180deg, #c49a72 0%, var(--accent) 100%);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.96rem;
+      box-shadow: 0 14px 30px rgba(182,138,98,0.26);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 34px rgba(182,138,98,0.30);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.56);
+      color: var(--text);
+      border-color: var(--line);
+      box-shadow: none;
+    }
+
+    .hero {
+      padding: 42px 0 24px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.66);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-xl);
+    }
+
+    .hero-copy {
+      padding: 42px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      inset: auto -60px -80px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(182,138,98,0.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: rgba(124,111,102,0.45);
+    }
+
+    .hero h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(3.2rem, 7vw, 6rem);
+      line-height: 0.94;
+      letter-spacing: -0.03em;
+      font-weight: 500;
+      margin-bottom: 18px;
+      color: #40362f;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .hero-lead {
+      max-width: 54ch;
+      color: var(--muted);
+      font-size: 1.04rem;
+      margin-bottom: 28px;
+    }
+
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+      margin: 28px 0 30px;
+    }
+
+    .fact {
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(61,52,45,0.06);
+      border-radius: 18px;
+      padding: 16px;
+      min-height: 100px;
+    }
+
+    .fact .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 7px;
+    }
+
+    .fact strong {
+      font-size: 1.02rem;
+      line-height: 1.3;
+      display: block;
+      font-weight: 600;
+      color: #493e36;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .countdown-card,
+    .note-card,
+    .travel-card,
+    .section-card,
+    .faq-card,
+    .gift-card,
+    .rsvp-card,
+    .info-card {
+      padding: 28px;
+    }
+
+    .countdown-number {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(3.2rem, 7vw, 5rem);
+      line-height: 0.9;
+      margin: 6px 0 10px;
+      color: var(--accent-deep);
+    }
+
+    .muted { color: var(--muted); }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(182,138,98,0.12);
+      color: var(--accent-deep);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    section {
+      padding: 18px 0;
+    }
+
+    .section-head {
+      margin-bottom: 18px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .section-head h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.2rem, 4vw, 3.3rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #433831;
+    }
+
+    .section-head p {
+      max-width: 60ch;
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .story-grid,
+    .location-grid,
+    .style-grid,
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .agenda {
+      display: grid;
+      gap: 14px;
+    }
+
+    .agenda-item {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .agenda-item:last-child { border-bottom: 0; }
+
+    .agenda-time {
+      color: var(--accent-deep);
+      font-weight: 700;
+      font-size: 0.98rem;
+      letter-spacing: 0.02em;
+    }
+
+    .agenda-item strong {
+      display: block;
+      font-size: 1rem;
+      color: #4a4038;
+      margin-bottom: 4px;
+    }
+
+    .agenda-item span {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .quote-box {
+      background: linear-gradient(180deg, rgba(255,255,255,0.74), rgba(255,255,255,0.56));
+      border: 1px solid rgba(61,52,45,0.08);
+      border-radius: 22px;
+      padding: 24px;
+    }
+
+    .quote-box p {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.7rem;
+      line-height: 1.15;
+      color: #4a3e36;
+      margin-bottom: 12px;
+    }
+
+    .detail-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .detail-row:last-child { border-bottom: 0; }
+
+    .detail-label {
+      color: var(--muted);
+      min-width: 110px;
+    }
+
+    .detail-value {
+      text-align: right;
+      font-weight: 500;
+      color: #4a4038;
+    }
+
+    .tips {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .tip {
+      background: rgba(255,255,255,0.56);
+      border: 1px solid rgba(61,52,45,0.06);
+      border-radius: 18px;
+      padding: 16px 18px;
+    }
+
+    .tip strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #4a4038;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    details {
+      background: var(--panel-strong);
+      border-radius: 20px;
+      border: 1px solid rgba(61,52,45,0.08);
+      padding: 18px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 600;
+      color: #473d35;
+      position: relative;
+      padding-right: 28px;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: -2px;
+      font-size: 1.2rem;
+      color: var(--accent-deep);
+    }
+
+    details[open] summary::after { content: "–"; }
+
+    details p {
+      margin: 12px 0 0;
+      color: var(--muted);
+    }
+
+    .rsvp-card {
+      text-align: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,240,231,0.90));
+    }
+
+    .rsvp-card h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      line-height: 0.95;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .rsvp-card p {
+      color: var(--muted);
+      max-width: 62ch;
+      margin: 0 auto 22px;
+    }
+
+    .footer {
+      padding: 30px 0 60px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 1020px) {
+      .hero-grid,
+      .story-grid,
+      .location-grid,
+      .style-grid,
+      .bottom-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-facts {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar-inner {
+        padding: 12px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav { gap: 14px; }
+
+      .hero-copy,
+      .countdown-card,
+      .note-card,
+      .travel-card,
+      .section-card,
+      .faq-card,
+      .gift-card,
+      .rsvp-card,
+      .info-card {
+        padding: 22px;
+      }
+
+      .agenda-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .detail-row {
+        flex-direction: column;
+      }
+
+      .detail-value {
+        text-align: left;
+      }
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="wordmark">Poya & Florence · 29. Juli 2026</div>
+      <nav class="nav">
+        <a href="#ablauf">Ablauf</a>
+        <a href="#location">Location</a>
+        <a href="#dresscode">Dresscode</a>
+        <a href="#geschenke">Geschenke</a>
+        <a href="#faq">Fragen</a>
+        <a href="#teilnahme" class="btn">Teilnahme</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="glass hero-copy">
+          <div class="eyebrow">Wir heiraten</div>
+          <h1>Poya <span>&amp;</span> Florence</h1>
+          <p class="hero-lead">
+            Wir freuen uns sehr, unseren besonderen Tag gemeinsam mit euch in Split zu feiern. Auf dieser Seite findet ihr alle Informationen, die ihr für unsere Hochzeit braucht.
+          </p>
+
+          <div class="hero-facts">
+            <div class="fact">
+              <span class="label">Datum</span>
+              <strong>29. Juli 2026</strong>
+            </div>
+            <div class="fact">
+              <span class="label">Beginn</span>
+              <strong>16:00 Uhr</strong>
+            </div>
+            <div class="fact">
+              <span class="label">Ort</span>
+              <strong>Villa Dalmacija<br>Split, Kroatien</strong>
+            </div>
+          </div>
+
+          <div class="cta-row">
+            <a href="#teilnahme" class="btn">Teilnahme bestätigen</a>
+            <a href="#location" class="btn btn-secondary">Anfahrt ansehen</a>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="glass countdown-card">
+            <div class="pill">Countdown</div>
+            <div class="countdown-number" id="days-left">…</div>
+            <p class="muted">Tage bis wir gemeinsam in Split feiern.</p>
+          </div>
+
+          <div class="glass note-card">
+            <div class="pill">Wichtiger Hinweis</div>
+            <p class="muted" style="margin-bottom:0;">
+              Bitte gebt uns bis zum <strong style="color:#4a4038;">30. April 2026</strong> Bescheid, ob ihr dabei seid, damit wir alles bestmöglich planen können.
+            </p>
+          </div>
+
+          <div class="glass travel-card">
+            <div class="pill">Anreise</div>
+            <p class="muted" style="margin-bottom:0;">
+              Zur Location kommt ihr am einfachsten mit dem Auto oder mit Uber bzw. Bolt. Vom Stadtzentrum Split kostet die Fahrt in der Regel höchstens etwa 10 € für bis zu vier Personen.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ablauf">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Der Tag</div>
+            <h2>So ist unser Hochzeitstag geplant</h2>
+          </div>
+          <p>Einige Uhrzeiten stehen noch nicht final fest. Sobald wir den genauen Ablauf vollständig festgelegt haben, ergänzen wir die letzten Details.</p>
+        </div>
+
+        <div class="story-grid">
+          <div class="glass section-card">
+            <div class="agenda">
+              <div class="agenda-item">
+                <div class="agenda-time">16:00</div>
+                <div>
+                  <strong>Treffen an der Villa Dalmacija</strong>
+                  <span>Wir starten gemeinsam an der Location in Split.</span>
+                </div>
+              </div>
+              <div class="agenda-item">
+                <div class="agenda-time">Danach</div>
+                <div>
+                  <strong>Fotos</strong>
+                  <span>Poya und Florence werden zunächst Fotos machen.</span>
+                </div>
+              </div>
+              <div class="agenda-item">
+                <div class="agenda-time">Anschließend</div>
+                <div>
+                  <strong>Iranische Zeremonie</strong>
+                  <span>Ein besonderer Teil unseres Tages mit traditioneller Bedeutung.</span>
+                </div>
+              </div>
+              <div class="agenda-item">
+                <div class="agenda-time">Später</div>
+                <div>
+                  <strong>Abendessen</strong>
+                  <span>Gemeinsames Dinner mit unseren Gästen.</span>
+                </div>
+              </div>
+              <div class="agenda-item">
+                <div class="agenda-time">Abends</div>
+                <div>
+                  <strong>Feier & Tanz</strong>
+                  <span>Mit Musik, Party und einem langen Sommerabend.</span>
+                </div>
+              </div>
+              <div class="agenda-item">
+                <div class="agenda-time">Später</div>
+                <div>
+                  <strong>Torte & Mitternachtssnacks</strong>
+                  <span>Zum späteren Abend gibt es Torte, Snacks und natürlich auch Getränke.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass section-card">
+            <div class="quote-box">
+              <p>Ein Sommertag in Split, gutes Essen, Musik, unsere liebsten Menschen und ein gemeinsamer Start in einen neuen Lebensabschnitt.</p>
+              <span class="muted">Genau so möchten wir mit euch feiern.</span>
+            </div>
+            <div class="tips">
+              <div class="tip">
+                <strong>Kinder sind willkommen</strong>
+                <span class="muted">Wir freuen uns, wenn ihr mit euren Kindern dabei seid.</span>
+              </div>
+              <div class="tip">
+                <strong>Nur eingeladene Gäste</strong>
+                <span class="muted">Bitte kommt ohne zusätzliche Begleitung, sofern sie nicht ausdrücklich eingeladen ist.</span>
+              </div>
+              <div class="tip">
+                <strong>Fotos sind erlaubt</strong>
+                <span class="muted">Ihr könnt gerne fotografieren und schöne Erinnerungen festhalten.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="location">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Ort & Anfahrt</div>
+            <h2>Villa Dalmacija, Split</h2>
+          </div>
+          <p>Unsere Hochzeit findet direkt an der Villa Dalmacija in Split statt. Bitte plant eure Anreise entspannt und rechtzeitig.</p>
+        </div>
+
+        <div class="location-grid">
+          <div class="glass info-card">
+            <div class="detail-list">
+              <div class="detail-row">
+                <div class="detail-label">Adresse</div>
+                <div class="detail-value">Šetalište Ivana Meštrovića 43<br>21000 Split, Kroatien</div>
+              </div>
+              <div class="detail-row">
+                <div class="detail-label">Parken</div>
+                <div class="detail-value">Vor Ort stehen ausreichend Parkplätze zur Verfügung.</div>
+              </div>
+              <div class="detail-row">
+                <div class="detail-label">Shuttle</div>
+                <div class="detail-value">Es wird kein Shuttle geben.</div>
+              </div>
+              <div class="detail-row">
+                <div class="detail-label">Empfehlung</div>
+                <div class="detail-value">Uber oder Bolt sind in Split sehr günstig und oft die einfachste Lösung.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass info-card">
+            <div class="tips" style="margin-top:0;">
+              <div class="tip">
+                <strong>Fahrt aus dem Zentrum</strong>
+                <span class="muted">Vom Stadtzentrum Split kostet die Fahrt mit Uber oder Bolt meist maximal etwa 10 € für vier Personen.</span>
+              </div>
+              <div class="tip">
+                <strong>Klimatisierte Location</strong>
+                <span class="muted">Im Innenbereich ist die Location klimatisiert.</span>
+              </div>
+              <div class="tip">
+                <strong>Wichtig</strong>
+                <span class="muted">Schwimmen ist vor Ort nicht erlaubt.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dresscode">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Dresscode</div>
+            <h2>Elegant, festlich und sommerlich</h2>
+          </div>
+          <p>Wir heiraten Ende Juli in Split. Rechnet also mit warmem Wetter und kleidet euch stilvoll, aber angenehm für einen Sommertag.</p>
+        </div>
+
+        <div class="style-grid">
+          <div class="glass section-card">
+            <div class="tips" style="margin-top:0;">
+              <div class="tip">
+                <strong>Stil</strong>
+                <span class="muted">Elegant und festlich.</span>
+              </div>
+              <div class="tip">
+                <strong>Farben</strong>
+                <span class="muted">Bitte kein Weiß.</span>
+              </div>
+              <div class="tip">
+                <strong>Sommer in Split</strong>
+                <span class="muted">Es wird sehr warm sein, wählt also gerne ein leichtes und angenehmes Outfit.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass section-card">
+            <div class="tips" style="margin-top:0;">
+              <div class="tip">
+                <strong>Am Abend</strong>
+                <span class="muted">Später kann es etwas frischer werden. Achtet am besten kurz vorher auf das Wetter.</span>
+              </div>
+              <div class="tip">
+                <strong>Komfort</strong>
+                <span class="muted">Schön darf gerne praktisch sein – ihr sollt euch wohlfühlen und mit uns feiern können.</span>
+              </div>
+              <div class="tip">
+                <strong>Atmosphäre</strong>
+                <span class="muted">Die Location ist besonders – passend dazu darf euer Look gerne stilvoll und sommerlich wirken.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="geschenke">
+      <div class="shell bottom-grid">
+        <div class="glass gift-card">
+          <div class="eyebrow">Geschenke</div>
+          <h2 style="font-family:'Cormorant Garamond', Georgia, serif; font-size:clamp(2.1rem,4vw,3.2rem); line-height:0.98; margin-bottom:14px; font-weight:500; color:#433831;">Eure Anwesenheit ist das größte Geschenk</h2>
+          <p class="muted" style="margin-bottom:14px;">
+            Falls ihr uns darüber hinaus eine Freude machen möchtet, freuen wir uns sehr über einen kleinen Beitrag zu unserer gemeinsamen Zukunft oder unserer Hochzeitsreise.
+          </p>
+          <p class="muted" style="margin-bottom:0;">
+            Für unsere Wohnung benötigen wir keine klassischen Geschenke. Wenn ihr möchtet, könnt ihr uns euren Beitrag gerne einfach in einem Umschlag überreichen.
+          </p>
+        </div>
+
+        <div class="glass rsvp-card" id="teilnahme">
+          <div class="eyebrow" style="justify-content:center; width:100%;">Teilnahme</div>
+          <h2>Bitte gebt uns bis zum 30. April 2026 Bescheid</h2>
+          <p>
+            Damit wir unsere Hochzeit gut planen können, freuen wir uns über eure Rückmeldung. Der Button kann später direkt mit eurem Formular, WhatsApp oder einer anderen Rückmeldungsmöglichkeit verknüpft werden.
+          </p>
+          <div class="cta-row" style="justify-content:center;">
+            <a href="#" class="btn">Teilnahme bestätigen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Fragen</div>
+            <h2>Häufige Fragen</h2>
+          </div>
+          <p>Ein paar wichtige Punkte vorab, damit für euch alles klar ist.</p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Dürfen Kinder mitgebracht werden?</summary>
+            <p>Ja, Kinder sind herzlich willkommen.</p>
+          </details>
+          <details>
+            <summary>Gibt es Parkplätze an der Location?</summary>
+            <p>Ja, an der Villa Dalmacija stehen vor Ort ausreichend Parkplätze zur Verfügung.</p>
+          </details>
+          <details>
+            <summary>Gibt es vegetarische oder besondere Essensoptionen?</summary>
+            <p>Ja, vegetarische Optionen sind vorgesehen.</p>
+          </details>
+          <details>
+            <summary>Dürfen wir fotografieren?</summary>
+            <p>Ja, Fotos sind erlaubt. Ihr könnt gerne schöne Erinnerungen festhalten.</p>
+          </details>
+          <details>
+            <summary>Ist Schwimmen an der Location erlaubt?</summary>
+            <p>Nein, Schwimmen ist vor Ort nicht erlaubt.</p>
+          </details>
+          <details>
+            <summary>Gibt es Alkohol und Snacks am Abend?</summary>
+            <p>Ja, am Abend wird es Alkohol geben. Später sind außerdem Mitternachtssnacks geplant.</p>
+          </details>
+          <details>
+            <summary>Kann ich jemanden zusätzlich mitbringen?</summary>
+            <p>Bitte kommt nur mit den Personen, die ausdrücklich eingeladen wurden.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell">
+      Poya & Florence · Villa Dalmacija · Split · 29. Juli 2026
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const weddingDate = new Date('2026-07-29T16:00:00');
+      const today = new Date();
+      const diff = weddingDate - today;
+      const days = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+      const el = document.getElementById('days-left');
+      if (el) el.textContent = days;
+    })();
+  </script>
+</body>
+</html>
